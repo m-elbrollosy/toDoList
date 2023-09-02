@@ -1,0 +1,89 @@
+@font-face {
+    font-family: "msb";
+    src: url("./../webfonts/en/msb.ttf");
+}
+html {
+    font-size: 32px;
+}
+body {
+    font-family: "msb";
+    background-image: url("./../imgs/earth.png");
+    background-size: cover;
+}
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+.form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.form input:first-of-type {
+    width: 90%;
+    margin: 0.5rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.3rem;
+    outline: none;
+    opacity: 0.7;
+    transition: 0.4s;
+}
+.form input:first-of-type:focus, .form input:first-of-type:hover {
+    opacity: 1;
+}
+.form input:nth-of-type(2) {
+    /* margin: 0; */
+    padding: 0.2rem;
+    border-radius: 0.3rem;
+    opacity: 0.5;
+    transition: 0.4s;
+}
+.form .btn-add:hover {
+    cursor: pointer;
+    background: rgba(255, 0, 0, 0.644);
+    color: white;
+    opacity: 1;
+}
+.tasks {
+
+}
+.task {
+    position: relative;
+    border: 0.01rem solid wheat;
+    border-radius: 0.35rem;
+    color: white;
+    text-shadow: 2px 2px 8px black;
+    background-color: rgba(245, 222, 179, 0.5);
+    padding: 0.3rem;
+    margin: 0.3rem 0.1rem;
+    opacity: 0.7;
+    transition: 0.4s;
+}
+.task.done {
+opacity: 0.3;
+}
+.task:hover {
+ opacity: 1;
+}
+.task span {
+    position: absolute;
+    right: 0.3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0.01rem solid rgba(255, 255, 255, 0.6);
+    border-radius: 0.2rem;
+    padding: 0.15rem;
+    color: black;
+    font-size: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.6);
+    opacity: 0.5;
+    transition: 0.4s;
+}
+.task span:hover {
+    cursor: pointer;
+    border-color: red;
+    background: red;
+    color: white;
+    opacity: 1;
+}
