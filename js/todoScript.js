@@ -4,30 +4,29 @@ const tasksContainer = document.querySelector(".tasks .container");
 
 
 addButton.addEventListener("click", getTasks);
-//delete
+//click on the tasks (delete task & complete task)
 tasksContainer.addEventListener("click", (ev)=>{
-
+//1- delete from page - & delete from local Storage
     if (ev.target.classList.contains("delete")){
     //delete task parent of delete button
     ev.target.parentElement.remove();
     //delete from localStorage by id
-    // console.log(ev.target.parentElement.dataset.id);
     deleteTask(ev.target.parentElement.dataset.id);
     }
+//2- toggle .done class & change completed status
     if (ev.target.classList.contains("task")){
-        // console.log("yes");
+        //a-toggle .done class
         ev.target.classList.toggle("done");
-        //completedTask function
+        //b-change completed status
         taskCompleted(ev.target.dataset.id);
     }
 });
 
-// console.log(addButton);
 
 let tasksArr = [];
 //4b- add values in local storage TO tasks array (if) local storage not empty.
 if (localStorage.getItem("tasks")){
-    // console.log(localStorage.getItem("tasks"));
+    // console.log(window.localStorage.getItem("tasks"));
     tasksArr = JSON.parse(localStorage.getItem("tasks"));
 }
 //get data from local storage (why we trigger it?)
@@ -45,8 +44,6 @@ function getTasks () {
        //empty the input value
        input.value = "";
    }
-//    console.log(tasksArr);
-    // console.log(tasksContainer);
 
 }
 
